@@ -30,6 +30,37 @@ Steps to read/write to peripherals you're connected to:
 
 # Documentation
 
+* To get started with BLE, the following permissions will need to be granted in the your_project_directory/android/app/src/main/AndroidManifest.xml file
+```
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-feature android:name="android.hardware.bluetooth_le"  android:required="true" />
+```
+* Keep in mind we're supporting Android API 23 (M), so we'll need to make sure that both the minSdkVersion and the targetSdkVersion in your_project_directory/android/app/src/main/AndroidManifest.xml file are set to 23
+```
+<uses-sdk
+        android:minSdkVersion="23"
+        android:targetSdkVersion="23" />
+```
+* Within the ble package (the files in your_project_directory/android/app/src/main/java/com/nativeblemodule/ble/) we see the bleModule.java and the blePackage.java files. The bleModule.java file is where the meat of BLE bridging is done. Here we can see generic BluetoothGatt API calls. 
+* Our bridge communicates to the react native application through the RCTDeviceEventEmitter. We have listeners set up in our react native application to listen to series of events emit by our bluetooth api methods. 
+```
+componentDidMount() {
+    DeviceEventEmitter.addListener('DeviceDiscovered', (result) => {this.setState({textViewText: this.state.textViewText + result + "\n"})});
+    DeviceEventEmitter.addListener('DeviceStateChanged', (stateChange) => {this.setState({textViewText: this.state.textViewText + "State Changed: " + stateChange + "\n"})});
+    DeviceEventEmitter.addListener('Event', (eventDescription) => {this.setState({textViewText: this.state.textViewText + eventDescription + "\n"})});
+    DeviceEventEmitter.addListener('ServiceDiscovered', (serviceDiscovered) => {this.setState({textViewText: this.state.textViewText + "Service Discovered: " + serviceDiscovered + "\n"})});
+    DeviceEventEmitter.addListener('CharacteristicDiscovered', (characteristicDiscovered) => {this.setState({textViewText: this.state.textViewText + "Characteristic Discovered: " + characteristicDiscovered + "\n"})});
+  }
+```
+* If you want to abstract out the API calls even further, you can pass in the characteristic string values from react-native to the bridge. 
+
+# Support
+
+Feel free to create an issue and we'll happily walk you through any setup/diagnose any issues.
 
 # License
 
