@@ -12,7 +12,7 @@ This is assuming you have react-native installed and have followed the <a href="
 
 ![screenshot_20160718-170004](https://cloud.githubusercontent.com/assets/7344422/16934536/f5c56cb0-4d0b-11e6-9aff-9ec21748d6af.png)
 
-# Documentation 
+# Setup
 
 Getting up and running should be fairly easy. Steps to scan and view peripherals in your area/connect to said peripherals:
 * clone repo: $ ```git clone git@github.com:Versame/React-Native-BLE-Bridge.git```
@@ -27,6 +27,9 @@ Steps to read/write to peripherals you're connected to:
 * Navigate to your_project_directory/android/app/src/main/java/com/nativeblemodule/ble/bleModule.java
 * Find and replace all instances of ```"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"``` with the different characteristic UUID values that you will be reading/writing/subscribing to. 
 * Use the Read Characteristic, Subscribe to Characteristic, and Write Characteristic buttons to do the appropriate task. 
+
+# Documentation
+
 
 # License
 
