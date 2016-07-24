@@ -10,7 +10,9 @@ This is assuming you have react-native installed and have followed the <a href="
 
 # Screen Shot
 
-![screenshot_20160718-170004](https://cloud.githubusercontent.com/assets/7344422/16934536/f5c56cb0-4d0b-11e6-9aff-9ec21748d6af.png)
+<p align="center">
+    <img src="https://cloud.githubusercontent.com/assets/7344422/16934536/f5c56cb0-4d0b-11e6-9aff-9ec21748d6af.png">
+</p>
 
 # Setup
 
