@@ -1,14 +1,7 @@
 # React-Native-Android-BLE-Module
+# Introduction
 
-React Native proof of concept for react native ble android module.
-
-uses Android (M) API 23. Can scan and connect/disconnect to devices as well as read/write characteristics.
-
-<b> This is only for Android and only supports API 23 (M). </b>
-
-This is assuming you have react-native installed and have followed the <a href="https://facebook.github.io/react-native/docs/getting-started.html">Getting Started Guide</a> by facebook.
-
-# Screen Shot
+This is a React Native example project that implements native Android BLE. This example app strictly uses Android (M) API 23. The example app can scan and connect/disconnect to devices as well as read/write characteristics. <b> This is only for Android and only supports API 23 (M). </b>This is assuming you have react-native installed and have followed the <a href="https://facebook.github.io/react-native/docs/getting-started.html">Getting Started Guide</a> by facebook.
 
 <p align="center">
     <img src="https://cloud.githubusercontent.com/assets/7344422/16934536/f5c56cb0-4d0b-11e6-9aff-9ec21748d6af.png">
